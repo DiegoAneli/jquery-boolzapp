@@ -11,13 +11,20 @@
 }
 
 
-body {
+.contenitore_gen{
   width: 100%;
   height: 100vh;
-  overflow: auto;
   font-size: 15px;
   font-family: 'Lato', sans-serif;
+  background: antiquewhite;
+}
 
+
+.wrapper{
+  width:100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #F7F9FA;
 }
 
 .header{
@@ -40,7 +47,7 @@ body {
   overflow: hidden;
 }
 .pic_img{
-  width: 100%;
+  width: 139%;
 }
 
 .header_info{
@@ -54,7 +61,7 @@ body {
 }
 .header_status{
   font-size: 90%;
-  color: lightgrey;
+  color: darkgrey;
 }
 
 .header-buttons{
@@ -73,19 +80,6 @@ body {
 .header-buttons_item i {
   color: darkgrey;
 }
-.contenitore_gen{
-  height: 100%;
-  width: 100%;
-  padding: 20px;
-}
-
-.wrapper{
-  width:90%;
-  height: 100%;
-  margin: 0 auto;
-  background: #F7F9FA;
-  position: relative;
-}
 
 .cnt-left{
   width: 400px;
@@ -101,6 +95,8 @@ body {
   background-color: #8bb1ef;
 }
 
+
+
 .cnt_headbell {
   height: 60px;
   padding: 10px;
@@ -112,6 +108,8 @@ body {
   height: 45px;
   background-color: white;
   border-radius: 100%;
+  cursor: pointer;
+  margin-top: -3px;
 }
 
 .cnt_bell i {
@@ -122,8 +120,14 @@ body {
 .cnt_notif {
   width: 80%;
   float: right;
+  cursor: pointer;
+  font-size: 13px;
 }
-
+.cnt_notif h3 {
+  font-size: 15px;
+  font-weight:inherit;
+  cursor: pointer;
+}
 .searchbox{
   width: 100%;
   height: 50px;
@@ -147,6 +151,7 @@ body {
 .searchbox_icon i {
   color: #EEEEEE;
   padding: 5px;
+  cursor: pointer;
 }
 
 
@@ -157,8 +162,10 @@ body {
 .search_utente input{
   border: 0;
   width: 100%;
-  font-size: 100%;
+  font-size: 93%;
 }
+
+
 
 .main{
   width: calc(100% - 400px);
@@ -185,8 +192,12 @@ body {
   padding: 7px;
   border-bottom: 2px solid #EEEEEE;
 }
-.chat-list_item.active{
-  background: #E9EBEB;
+.chat-list_item :hover{
+  background: #e0dedb;
+  border-radius: 3px;
+  cursor: pointer;
+
+
 }
 .chat-list_avatar{
   width: 15%;
@@ -209,10 +220,10 @@ body {
 .chat_name{
   width: 80%;
   float: left;
-}
-.chat_name{
   font-size: 113%;
+  font-weight: inherit;
 }
+
 .chat_date{
   width: 20%;
   float: right;
@@ -228,32 +239,33 @@ body {
   padding-right: 5px;
   overflow: hidden;
   height: 100%;
+  color: darkgrey;
 }
 .chat-list_status{
   margin-right: 5px;
+  color: #8bb1ef;
+  font-size: 11px;
 }
-.chat-list_status img{
-  vertical-align: middle;
-}
+
 
 
 /*//CONTENITORE CHAT// */
 
 .main_content{
   height: calc(100% - 65px);
-  padding: 10px 5%;
+  padding: 20px 5%;
   overflow-y: scroll;
 }
 .message{
   position: relative;
 }
-.message.you{
+.message.send{
   text-align: right;
 }
-.message.you .message_wrapper{
+.message.send .message_wrapper{
   background: #DCF8C5;
 }
-.message.you .message_wrapper::after{
+.message.send .message_wrapper :after{
   content: '';
   display: block;
   position: absolute;
@@ -267,7 +279,7 @@ body {
   border-right: 10px solid transparent;
   border-radius: 2px;
 }
-.message.other .message_wrapper::before{
+.message.received .message_wrapper :before{
   content: '';
   display: block;
   position: absolute;
@@ -281,10 +293,10 @@ body {
   border-left: 10px solid transparent;
   border-radius: 2px;
 }
-.message.other{
+.message.received{
   text-align: left;
 }
-.message. .message_wrapper::after{
+.message. .message_wrapper :after{
   content: '';
   display: block;
   position: absolute;
@@ -302,10 +314,10 @@ body {
   display: inline-block;
   width: auto;
   padding: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
   border-radius: 5px;
   background: #FFF;
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(10px 8px 7px rgba(0,0,0,0.2));
   position: relative;
   text-align: left;
 }
@@ -319,9 +331,34 @@ body {
   color: #818181;
   line-height: 20px;
 }
-.message_info .status img{
+.message_info .status i{
   vertical-align: middle;
   height: 15px;
+  color: #8bb1ef;
+  font-size: 11px;
+}
+
+
+.yesterday {
+  height: 18px;
+  width: 14%;
+  background-color: #29dbae;
+  font-size: 13px;
+  border-radius: 5px;
+  margin-left: 327px;
+  text-align: center;
+  margin-bottom: 3px;
+
+}
+
+.today {
+  height: 18px;
+  width: 11%;
+  background-color: #29dbae;
+  font-size: 13px;
+  border-radius: 5px;
+  margin-left: 338px;
+  text-align: center;
 }
 
 
@@ -329,7 +366,8 @@ body {
   width: 100%;
   height: 60px;
   background:  #EEEEEE;
-  padding: 22px 18px;
+  padding: 20px 13px;
+  border-top: 1px solid #DCF8C5;
 
 
 }
@@ -357,20 +395,33 @@ body {
   float: left;
   height: 100%;
   font-size: 18px;
-  
+
 
 }
 
 .write_utente {
-  width: calc(100% - 50px);
-  padding: 4px;
+  width: calc(100% - 55px);
+  padding: 14px;
+  margin-top: -16px;
 
 
 }
 
 .write_utente input {
   border: 0;
+  height: 30px;
   width: 100%;
-  font-size: 100%;
+  font-size: 94%;
+  border-radius: 50px;
+}
 
+::-webkit-input-placeholder {
+  font-size: 13px;
+  text-align: center;
+  color: lightgrey;
+}
+
+
+.writebox_icon_left, .writebox_icon_right i {
+  cursor: pointer;
 }
